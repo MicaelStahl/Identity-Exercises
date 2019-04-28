@@ -105,7 +105,7 @@ namespace Identity_Exercises
                             new Songs{ Title="Knives and Pens", ArtistName="Black Veil Brides", Genre=genres[2], Album=albums[1] },
                             new Songs{ Title="Decoy World", ArtistName="INTERCOM, Park Avenue", Genre=genres[1], Album=albums[0] },
                             new Songs{ Title="Bangarang", ArtistName="Skrillex", Genre=genres[3], Album=albums[1] },
-
+                            // Continue here.
                         };
                     }
                 }
