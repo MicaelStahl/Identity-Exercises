@@ -1,0 +1,32 @@
+﻿@model Album
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br />
+<h1 class="offset-2">Delete @Model.Title</h1>
+<hr />
+<br />
+
+@if (Model.Songs.Count != 0 || Model.Songs != null)
+{
+    <h5 class="offset-2">
+        Are you sure you want to delete @Model.Title?<br />This Album Contains these songs;
+    </h5>
+
+    <hr />
+
+    @foreach (var item in Model.Songs)
+    {
+        <tr class="offset-2">
+            <td>@item.Title</td>
+            <td>@item.ArtistName</td>
+            <td>@item.Genre</td>
+            <td>@item.Album</td>
+        </tr>
+    }
+}
+else
+{
+    <h5 class="offset-2">Are you sure you want to delete @Model.Title?</h5>
+}

@@ -1,0 +1,23 @@
+﻿@model Genre
+@{
+    ViewData["Title"] = "CreateGenre";
+}
+
+<br />
+<h1>Create Genre</h1>
+<hr />
+<br />
+
+<form asp-action="CreateGenre" asp-controller="Genre" method="post">
+
+    <label asp-for="Title"></label>
+    <br />
+    <input asp-for="Title" />
+
+    <hr />
+
+    <input class="btn btn-success" type="submit" value="Submit" />
+
+</form>
+
+<a class="btn btn-primary" asp-action="Index" asp-controller="Genre">Return</a>

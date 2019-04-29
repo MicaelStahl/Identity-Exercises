@@ -18,6 +18,13 @@ namespace Identity_Exercises.Repositories
             _db = db;
         }
 
+        public List<Genre> AllGenres()
+        {
+            return _db.Genre
+                .Include(x=>x.Songs)
+                .Where(x => x.Id == x.Id).ToList();
+        }
+
         public Genre CreateGenre(Genre genre)
         {
             if (!string.IsNullOrWhiteSpace(genre.Title))

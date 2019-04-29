@@ -18,6 +18,13 @@ namespace Identity_Exercises.Repositories
             _db = db;
         }
 
+        public List<Album> AllAlbums()
+        {
+            return _db.Album
+                .Include(x=>x.Songs)
+                .Where(x => x.Id == x.Id).ToList();
+        }
+
         public Album CreateAlbum(Album album)
         {
             if (!string.IsNullOrWhiteSpace(album.Title) ||

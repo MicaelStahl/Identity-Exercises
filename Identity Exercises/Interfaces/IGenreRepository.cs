@@ -12,6 +12,7 @@ namespace Identity_Exercises.Interfaces
         Genre CreateGenre(Genre genre);
 
         // C(R)UD
+        List<Genre> AllGenres();
         Genre FindGenre(int? id);
         Genre FindGenreWithSongs(int? id);
 

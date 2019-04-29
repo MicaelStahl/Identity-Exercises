@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/CSS/site.css" rel="stylesheet" />
+    <script src="~/bootstrap/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div id="main-nav" class="row">
+            <nav class="nav navbar navbar-dark navbar-expand-sm bg-secondary fixed-top">
+                <div class="container">
+                    <div class="modal-header">
+                        <a href=""><img src="~/Funny_llama.jpg" alt="Logo" id="funny-llama" /></a>
+                    </div>
+                    <ul class="navbar-nav" id="header-list">
+                        <li class="nav-item active btn btn-dark">
+                            <a asp-action="Index" asp-controller="Home">Home</a>
+                        </li>
+                        <li class="nav-item active btn btn-dark">
+                            <a asp-action="Index" asp-controller="Album">Album</a>
+                        </li>
+                        <li class="nav-item active btn btn-dark">
+                            <a asp-action="Index" asp-controller="Genre">Genre</a>
+                        </li>
+                        <li class="nav-item active btn btn-dark">
+                            <a asp-action="Index" asp-controller="Songs">Songs</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

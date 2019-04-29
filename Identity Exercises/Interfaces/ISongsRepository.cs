@@ -12,6 +12,7 @@ namespace Identity_Exercises.Interfaces
         Songs CreateSong(Songs songs);
 
         // C(R)UD
+        List<Songs> AllSongs();
         Songs FindSong(int? id);
         Songs FindSongWithEverything(int? id);
 

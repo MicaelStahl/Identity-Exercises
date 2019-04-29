@@ -90,7 +90,7 @@ namespace Identity_Exercises.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteSong(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id != null || id != 0)
             {
@@ -104,8 +104,8 @@ namespace Identity_Exercises.Controllers
             }
             return BadRequest();
         }
-        [HttpPost, ActionName("DeleteSong")]
-        public IActionResult DeleteSongConfirmed(int? id)
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int? id)
         {
             if (id != null || id != 0)
             {

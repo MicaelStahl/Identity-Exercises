@@ -20,7 +20,7 @@ namespace Identity_Exercises.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_genre.AllGenres());
         }
 
         [HttpGet]
@@ -59,7 +59,7 @@ namespace Identity_Exercises.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditGenre(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id != null || id != 0)
             {
@@ -74,7 +74,7 @@ namespace Identity_Exercises.Controllers
             return BadRequest();
         }
         [HttpPost]
-        public IActionResult EditGenre(Genre genre)
+        public IActionResult Edit([Bind("Title")]Genre genre)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Identity_Exercises.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteGenre(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id != null || id != 0)
             {
@@ -104,8 +104,8 @@ namespace Identity_Exercises.Controllers
             }
             return BadRequest();
         }
-        [HttpPost, ActionName("DeleteGenre")]
-        public IActionResult DeleteGenreConfirmed(int? id)
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int? id)
         {
             if (id != null || id != 0)
             {

@@ -30,12 +30,14 @@ namespace Identity_Exercises
 
             if (userManager.FindByNameAsync("Micael").Result == null)
             {
-                AppUser user = new AppUser();
-                user.Email = "Micael@Administrator.com";
-                user.UserName = "Micael";
-                user.FirstName = "Micael";
-                user.SecondName = "Ståhl";
-                user.PhoneNumber = "0725539574";
+                AppUser user = new AppUser
+                {
+                    Email = "Micael@Administrator.com",
+                    UserName = "Micael",
+                    FirstName = "Micael",
+                    SecondName = "Ståhl",
+                    PhoneNumber = "0725539574"
+                };
 
                 var result = userManager.CreateAsync(user, "Password!23").Result;
 
@@ -48,12 +50,14 @@ namespace Identity_Exercises
 
             if (userManager.FindByNameAsync("Rikke").Result == null)
             {
-                AppUser user = new AppUser();
-                user.Email = "Rikke@NormalUser.com";
-                user.UserName = "Rikke";
-                user.FirstName = "Rikke";
-                user.SecondName = "Frederiksen";
-                user.PhoneNumber = "123456789";
+                AppUser user = new AppUser
+                {
+                    Email = "Rikke@NormalUser.com",
+                    UserName = "Rikke",
+                    FirstName = "Rikke",
+                    SecondName = "Frederiksen",
+                    PhoneNumber = "123456789"
+                };
 
                 var result = userManager.CreateAsync(user, "Password!23").Result;
 
@@ -85,7 +89,7 @@ namespace Identity_Exercises
                         new Genre{ Title="EDM" },
                         new Genre{ Title="Metal" },
                         new Genre{ Title="Dubstep" },
-                        new Genre{ Title="HipHop" },
+                        new Genre{ Title="Rap" },
                         new Genre{ Title="Pop" }
                     };
 
@@ -105,8 +109,15 @@ namespace Identity_Exercises
                             new Songs{ Title="Knives and Pens", ArtistName="Black Veil Brides", Genre=genres[2], Album=albums[1] },
                             new Songs{ Title="Decoy World", ArtistName="INTERCOM, Park Avenue", Genre=genres[1], Album=albums[0] },
                             new Songs{ Title="Bangarang", ArtistName="Skrillex", Genre=genres[3], Album=albums[1] },
-                            // Continue here.
+                            new Songs{ Title="Levels", ArtistName="Avicii", Genre=genres[1], Album=albums[1] },
+                            new Songs{ Title="Not Afraid", ArtistName="Eminem", Genre=genres[4], Album=albums[1] },
+                            new Songs{ Title="BOOM Headshot", ArtistName="Unknown", Genre=genres[3], Album=albums[1] },
+                            new Songs{ Title="Mockingbird", ArtistName="Eminem", Genre=genres[4], Album=albums[1] }
                         };
+
+                        db.Songs.AddRange(songs);
+
+                        db.SaveChanges();
                     }
                 }
             }

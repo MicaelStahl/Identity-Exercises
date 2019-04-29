@@ -20,16 +20,16 @@ namespace Identity_Exercises.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_album.AllAlbums());
         }
 
         [HttpGet]
-        public IActionResult CreateAlbum()
+        public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult CreateAlbum(Album album)
+        public IActionResult Create(Album album)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +70,7 @@ namespace Identity_Exercises.Controllers
                 {
                     return View(album);
                 }
+                return NotFound();
             }
             return BadRequest();
         }

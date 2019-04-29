@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Identity_Exercises.Database;
 using Identity_Exercises.Interfaces;
 using Identity_Exercises.Repositories;
+using Identity_Exercises.ViewModels.IdentityViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

@@ -1,0 +1,25 @@
+﻿@model Album
+@{
+    ViewData["Title"] = "CreateAlbum";
+}
+
+<br />
+<h1 class="offset-2">CreateAlbum</h1>
+<hr />
+<br />
+
+<form class="offset-2" asp-action="CreateAlbum" asp-controller="Album" method="post">
+
+    <label asp-for="Title"></label>
+    <br />
+    <input asp-for="Title" />
+
+    <hr />
+
+    <label asp-for="AlbumCreator"></label>
+    <br />
+    <input asp-for="AlbumCreator" />
+
+    <input class="btn btn-success" type="submit" value="Submit" />
+
+</form>

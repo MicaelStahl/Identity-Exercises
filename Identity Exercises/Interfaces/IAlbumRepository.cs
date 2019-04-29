@@ -12,6 +12,7 @@ namespace Identity_Exercises.Interfaces
         Album CreateAlbum(Album album);
 
         //C(R)UD
+        List<Album> AllAlbums();
         Album FindAlbum(int? id);
         Album FindAlbumWithSongs(int? id);
 

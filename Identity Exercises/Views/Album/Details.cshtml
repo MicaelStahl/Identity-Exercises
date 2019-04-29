@@ -1,0 +1,49 @@
+﻿@model Album
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+<h1 class="offset-2">Details</h1>
+<hr />
+<br />
+
+<table class="offset-2 table-active">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Creator</th>
+            <th>Songs in Album</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Title</td>
+            <td>@Model.AlbumCreator</td>
+            @if (Model.Songs.Count != 0)
+            {
+                <td>
+                    <table class="table-active">
+                        @foreach (var item in Model.Songs)
+                        {
+                            <tr>
+                                <td>@item.Title</td>
+                                <td>@item.ArtistName</td>
+                                <td>@item.Genre</td>
+                                <td>@item.Album</td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            }
+            <td>
+                <partial name="_EDButtons" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a asp-action="Index" asp-controller="Album" class="btn btn-primary offset-2">
+    Return
+</a>

@@ -1,0 +1,44 @@
+﻿@model Genre
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+<h1 class="offset-2">Details of @Model.Title</h1>
+<hr />
+<br />
+
+<table>
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Songs in Genre</td>
+            <td>Options</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Title</td>
+            @if (Model.Songs.Count != 0 || Model.Songs != null)
+            {
+                foreach (var item in Model.Songs)
+                {
+                    <td>@item.Title</td>
+                    <td>@item.ArtistName</td>
+                    <td>@item.Album</td>
+                }
+            }
+            else
+            {
+                <td><p>No songs in Genre</p></td>
+            }
+            <td>
+                <partial name="_EDButtons" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a asp-action="Index" asp-controller="Genre" class="btn btn-primary offset-2">
+    Return
+</a>

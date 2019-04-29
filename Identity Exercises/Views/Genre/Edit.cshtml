@@ -1,0 +1,19 @@
+﻿@model Genre
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<h1 class="offset-2">Edit @Model.Title</h1>
+<hr />
+<br />
+
+<form class="offset-2" asp-action="Edit" asp-controller="Genre" method="post">
+
+    <label asp-for="Title"></label>
+    <input asp-for="Title" />
+
+    <input class="btn btn-success" type="submit" value="Submit" />
+
+</form>
